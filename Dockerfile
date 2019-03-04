@@ -12,4 +12,4 @@ RUN /get-binaries.sh
 
 COPY ./exec.sh /exec.sh
 
-ENTRYPOINT /exec.sh $@
+ENTRYPOINT ["/exec.sh"]
