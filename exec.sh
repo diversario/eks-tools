@@ -24,24 +24,8 @@ if [[ -d $HOST_HOME/.kube-host ]]; then
   cp -r $HOST_HOME/.kube-host $HOST_HOME/.kube
 fi
 
-if [[ -d $HOST_HOME/.helm-host ]]; then
-  cp -r $HOST_HOME/.helm-host $HOST_HOME/.helm
-fi
-
 if [[ ! -z $UID ]]; then
-  if [[ -d $HOST_HOME/.kube ]]; then
-    chown -R $USER:$GROUP $HOST_HOME/.kube
-  fi
-
-  if [[ -d $HOST_HOME/.helm ]]; then
-    chown -R $USER:$GROUP $HOST_HOME/.helm
-  fi
-
-  if [[ -d $HOST_HOME/.aws ]]; then
-    chown -R $USER:$GROUP $HOST_HOME/.aws
-  fi
-
-  su-exec $USER:$GID ${@}
+  su-exec $USER:$GID "${@}"
 else
-  $@
+  su-exec root:root "${@}"
 fi
