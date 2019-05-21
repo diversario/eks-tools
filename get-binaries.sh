@@ -23,7 +23,7 @@ for v in '2.12.3'; do
   chmod +x $bin_name
 done
 
-for v in '1.11.7'; do
+for v in '1.12.8'; do
   filename=/bin/kubectl
   url=$(echo $KUBECTL_URL | sed -e "s/VERSION/$v/")
   echo "Downloading kubectl v$v from $url to $filename"
