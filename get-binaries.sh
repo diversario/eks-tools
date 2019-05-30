@@ -36,3 +36,9 @@ chmod a+x /bin/aws-iam-authenticator
 
 curl -sL https://github.com/mikefarah/yq/releases/download/2.2.1/yq_linux_amd64 -o /bin/yq-merge
 chmod a+x /bin/yq-merge
+
+curl -sL https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip -o /tmp/tf.zip
+unzip /tmp/tf.zip -d /tmp/ -j
+rm /tmp/tf.zip
+mv /tmp/terraform /bin/terraform12
+chmod a+x /bin/terraform12
