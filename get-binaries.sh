@@ -9,7 +9,7 @@ KUBECTL_URL="https://storage.googleapis.com/kubernetes-release/release/vVERSION/
 
 mkdir -p /bin
 
-for v in '2.12.3'; do
+for v in '2.14.3'; do
   tar_filename=/tmp/helmv$v.tar.gz
   filter=$OS-amd64/helm
   bin_name=/bin/helm
